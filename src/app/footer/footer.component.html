@@ -1,0 +1,44 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col logo">
+        <img class="img-fluid" src="assets/logo2.png">
+      </div>
+      <div class="col help-center">
+        <!-- <h3>{{'FAQS' }}</h3> -->
+        <p routerLink="/filters">{{'BUYING' }}</p>
+        <p routerLink="/faqs">{{'FAQS' }}</p>
+        <p routerLink="/sell">{{"SELLING" }}</p>
+        <p>{{"SHIPPING"}}</p>
+        <p>{{"PAYMENTS" }}</p>
+ 
+      </div>
+      <div class="col refund">
+        <p routerLink="/profile"  [queryParams]="{'showTab':'v-pills-issue-tab'}">{{"RANDR" }}</p>
+        <p>{{"COMM" }}</p>
+        <p>{{'OTHER' }}</p> 
+      </div>
+      <div class="col about-us">
+        <!-- <h3>{{"ABOUT" }}</h3> -->
+        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-contact-tab'}">{{'CONTACT' }}</p>
+        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-about-tab'}">{{"ABOUT" }}</p>
+        <p>{{'COLLAB' }}</p>
+        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-join-tab'}">{{"JOIN" }}</p>
+ 
+      </div>
+      <div class="col social">
+        <!-- <h3>{{"SOCIALMEDIA" }}</h3> -->
+        <span>          
+          <ngx-fa name="facebook-f"></ngx-fa>
+        </span>
+        <span>          
+          <ngx-fa name="instagram"></ngx-fa>
+        </span>
+        <span>          
+          <ngx-fa name="twitter"></ngx-fa>
+        </span>
+ 
+      </div>
+    </div>
+  </div>
+</footer>

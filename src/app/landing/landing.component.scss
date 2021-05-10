@@ -1,0 +1,136 @@
+@import "src/variables";
+#landing{
+    .intro{
+        margin:20px 0;
+        padding-top:60px;
+        h1{
+            color:$font-color2;
+            margin-top:40px;
+            span{
+                color: $font-color;
+                position: relative;
+            }
+            span:after{
+                position: absolute;
+                content: '';
+                width:100%;
+                height: 8px;
+                background-image: linear-gradient($bg-color,$bg-color2);
+                bottom: 5px;
+                opacity: .3;
+                left: 0;
+                
+            }
+        }
+        p{
+            color:$font-color3;
+        }
+        button{
+            background-color: $bg-color;
+            color:#fff;
+            transition: .5s;
+        }
+        button:hover{
+            background-color: $button1-bgColor;
+        }
+
+        .imgs{
+            position: relative;
+            min-height:80vh;
+            div{
+                max-width: 250px;
+                position: absolute;
+                .square{
+                    width:100%;
+                    height:100%;
+                    position: relative;
+                    padding:1px;
+                }
+            }
+            .img1{
+                left:40%;
+            }
+            
+            .square:after{
+                background-color: rgb(194, 194, 255);
+                position: absolute;
+                width:50px;
+                height:50px;
+                content: '';
+                top:80%;
+                right:-10%;
+                opacity: .5;
+                transform:rotate(120deg) ;
+            }
+            .img2 .square:after{
+                background-color: rgb(254, 255, 194);
+                width:50px;
+                height:50px;
+                top:20%;
+                left:-10%;
+                transform:rotate(150deg) ;
+            }
+            .img2{
+                top:150px;
+                left:10%;
+            }
+            .img3 .square:after{
+                background-color: rgb(247, 201, 229);
+                width:50px;
+                height:50px;
+                top:90%;
+                left:40%;
+                transform:rotate(150deg) ;
+            }
+            .img3{
+                right:0;
+                top:280px;
+            }
+            // .img4{
+            //     right:-150px;
+            //     top:100px;
+            // }
+        }
+    }
+
+    .info{
+        background-color: rgb(242, 242, 248);
+        padding:40px 0;
+        h2{
+            color:$font-color2;
+            margin-bottom: 40px;
+        }
+        .details{
+            color:$font-color2;
+            .detail{
+                ngx-fa{
+                    font-size:2rem ;
+                }
+                h3{
+                    margin:20px 0;
+                }
+                p{
+                    color: $font-color3;
+                }
+            }
+        }
+    }
+    .info2,.info3{
+        h2{
+            color:$font-color2;
+        }
+        p{
+            color:$font-color3;
+        }
+    }
+    .info3{
+        ngx-fa{
+            color:$font-color;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        p{
+            display: inline-block;
+        }
+    }
+}

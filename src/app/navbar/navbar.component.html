@@ -1,0 +1,97 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-nav" ngxNavbarDynamicExpand>
+  <a class="navbar-brand" routerLink="/"><img class="img-fluid" src="assets/logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="collapse.toggle()" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ngx-navbar-collapse #collapse="ngxNavbarCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="mr-auto navbar-nav">
+      <!-- INDUSTRIES -->
+      <li>
+        <div class="btn-group">
+          <a class="nav-link pb-1">Industries <ngx-fa name="caret-down" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa></a>
+          <ul class="dropdown-menu">
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry1</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry2</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry3</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry4</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry5</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry6</a>
+            </li>
+            <li class="industry" [routerLink]="['/filters']">
+              <a>Industry7</a>
+            </li>
+          </ul>
+        </div>
+        
+      </li>
+      <!-- PRODUCT -->
+      <li>
+        <a class="nav-link btn login" (click)="collapse.toggle()" routerLink="/product">product</a>
+      </li>
+      <!-- COMPANY -->
+      <li>
+        <div class="btn-group">
+          <a class="nav-link pb-1">Companies <ngx-fa name="caret-down" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa></a>
+          <ul class="dropdown-menu">
+            <li class="company" [routerLink]="['/filters']">
+              <a>company1</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company2</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company3</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company4</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company5</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company6</a>
+            </li>
+            <li class="company" [routerLink]="['/filters']">
+              <a>company7</a>
+            </li>
+          </ul>
+        </div>
+        
+      </li>
+     
+    </ul>
+   <ul class="navbar-nav ml-auto">
+    <li>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" (keyup.enter)="search(searchInpt)" placeholder="SEARCH" name="search" aria-label="Search">
+        <button type="submit">
+          <ngx-fa name="search" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa>
+
+        </button>
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      </form>
+    </li>
+     <li>
+      <a class="nav-link btn login" (click)="collapse.toggle()" routerLink="/login">{{"LOGIN"}}</a>
+     </li>
+     <li>
+      <a class="nav-link btn signup" (click)="collapse.toggle()" routerLink="/signup">{{"SIGNUP"}}</a>
+     </li>
+     
+   </ul>
+   
+  </ngx-navbar-collapse>
+</nav>
