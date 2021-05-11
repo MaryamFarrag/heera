@@ -4,16 +4,31 @@ nav.my-nav{
     background-color: transparent!important;
     form{
         position: relative;
+        padding:0 20px;
+        width:300px;
+        input{
+            width:100%;
+            padding:10px 25px;
+        }
         button{
             background-color: transparent;
             border: none;
             position: absolute;
-            right:10px;
+            right:30px;
+            top:7px;
             ngx-fa{
-                font-size:1rem;
-                color:$font-color2;
-                
+                font-size:.7rem;
+                color:rgba(0,0,0,0.5);                
             }
+        }
+        .circle{
+            position: absolute;
+            top:40%;
+            left:30px;
+            width: 10px;
+            height: 10px;
+            border: 3px solid $bg-color;
+            border-radius: 50%; 
         }
     }
     .navbar-brand{

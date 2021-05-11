@@ -2,7 +2,7 @@
 
 footer{
     background-color: $bg-color2;
-    padding:2rem 0 3rem;
+    padding:2rem 0 0;
     .logo{
         width:100%;
         height:auto;
@@ -12,7 +12,6 @@ footer{
     }
     h3{
         font-size:13px;
-        font-family: 'Gotham-Bold';
     }
     p{
         color:$font-color2;
@@ -28,7 +27,13 @@ footer{
         color:$font-color;
         margin-right: 20px;
     }
-    .refund{
-        // margin-top:2.5rem;
+    .bottom-part{
+        background-color: #d6d6fa;
+        margin-top:10px;
+        padding:5px 10px;
+        span{
+            float: right;
+            font-size: 12px;
+        }
     }
 }
