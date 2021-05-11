@@ -32,8 +32,13 @@ footer{
         margin-top:10px;
         padding:5px 10px;
         span{
-            float: right;
             font-size: 12px;
+        }
+        a{
+            margin-right:20px;
+            font-size: 12px;
+            text-decoration: underline;
+            color:$font-color;
         }
     }
 }

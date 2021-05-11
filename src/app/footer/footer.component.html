@@ -6,26 +6,36 @@
       </div>
       <div class="col help-center">
         <h3>{{'Client' }}</h3>
-        <p routerLink="/filters">{{'BUYING' }}</p>
-        <p routerLink="/faqs">{{'FAQS' }}</p>
-        <p routerLink="/sell">{{"SELLING" }}</p>
-        <p>{{"SHIPPING"}}</p>
-        <p>{{"PAYMENTS" }}</p>
- 
+        <p routerLink="/filters">Become a client</p>
+        <p routerLink="/faqs">Earnings</p>
+        <p routerLink="/sell">Country</p>
+        <p>Help</p>
+        <p>Safety</p>
+        <p>Application Requirements</p>
+        <p>Express Drive</p>
+        <p>Business Profile</p> 
       </div>
       <div class="col refund">
         <h3>{{"Partner" }}</h3>
-        <p routerLink="/profile"  [queryParams]="{'showTab':'v-pills-issue-tab'}">{{"RANDR" }}</p>
-        <p>{{"COMM" }}</p>
-        <p>{{'OTHER' }}</p> 
+        <!-- <p routerLink="/profile"  [queryParams]="{'showTab':'v-pills-issue-tab'}">{{"RANDR" }}</p> -->
+        <p>Sign up to partner</p>
+        <p class="mb-2">Fare estimate</p>
+        <p>Cities</p>
+        <p>Help</p>
+        <p class="mb=2">Safety</p>
+        <p>Rewards</p>
+        <p class="mb-2">Events</p>
+        <p>Donate</p>
+        <p>Blog</p>
+
       </div>
       <div class="col about-us">
         <h3>{{"Heera Technologies" }}</h3>
-        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-contact-tab'}">{{'CONTACT' }}</p>
-        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-about-tab'}">{{"ABOUT" }}</p>
-        <p>{{'COLLAB' }}</p>
-        <p routerLink="/jilatee" [queryParams]="{'showTab':'v-pills-join-tab'}">{{"JOIN" }}</p>
- 
+        <p>Careers</p>
+        <p class="mb-4">Business</p>
+        <p>Developers</p>
+        <p>Press</p>
+        <p>Investor Relations</p> 
       </div>
       <div class="col social">
         <!-- <h3>{{"SOCIALMEDIA" }}</h3> -->
@@ -43,7 +53,13 @@
     </div>
   </div>
   <div class="bottom-part">
-    <span>All rights reserved for &#169; Heera Technologies</span>
+    <div class="float-right">
+        <a>Terms </a>
+        <a>Conditions </a>
+   
+        <span>All rights reserved for &#169; Heera Technologies</span>
+    </div>
+
     <div class="clearfix"></div>
   </div>
 </footer>
