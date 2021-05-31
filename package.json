@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
+    "@angular/animations": "^7.2.16",
     "@angular/cdk": "^7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
@@ -24,6 +24,7 @@
     "ngx-bootstrap-navbar": "0.0.5",
     "ngx-font-awesome": "^1.0.0",
     "ngx-navbar": "0.0.3",
+    "ngx-toastr": "^10.0.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

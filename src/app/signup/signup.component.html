@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-nav" ngxNavbarDynamicExpand>
+  <a class="navbar-brand" routerLink="/"><img class="img-fluid" src="assets/logo.png"></a>
+</nav>
+<section id="choose" *ngIf="screen == 'accountChoice'">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-6">
+        <div class="choice">
+          <button (click)="chooseType(1)" class="btn">Become a Client &#8594;</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="choice">
+          <button (click)="chooseType(2)" class="btn">Become a Partner &#8594;</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="signup" *ngIf="screen == 'signup'">
+  <div class="container">
+    <form [formGroup]="signupForm" class="email-signup">
+
+      <div *ngIf="signupStep == 1" class="continue-email text-center">
+        <h2>Get your free account</h2>
+        <input formControlName="email" type="email" class="form-control" (keyup)="checkEmail($event.target?.value)" [class.err]="signupForm.get('email').hasError('pattern')" placeholder="Work email address">
+        <div *ngIf="signupForm.get('email').hasError('pattern')">
+          <p class="errText">
+            <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.email[0]?.message}}
+          </p>
+        </div>
+        <div *ngIf="emailExists">
+          <p class="errText">
+            <ngx-fa class="mr-2" name="exclamation"></ngx-fa>This email already exists. <span routerLink="/signin">Want to login?</span>
+          </p>
+        </div>
+
+        <button type="button" class="btn" [disabled]="signupForm.get('email').invalid" (click)="signupStep = 2">Continue with Email</button><br>
+        <span>Already have an account? <span>Login</span></span>
+      </div>
+
+      <div *ngIf="signupStep == 2" class="continue-email text-center">
+        <h2>Get your free account</h2>
+
+        <div class="form-group half">
+          <input formControlName="first_name" type="text" class="form-control first-name" [class.err]="signupForm.get('first_name').hasError('pattern')" placeholder="First Name">
+          
+          <div *ngIf="signupForm.get('first_name').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.first_name[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group half">
+          <input formControlName="last_name" type="text" class="form-control last-name" [class.err]="signupForm.get('last_name').hasError('pattern')" placeholder="Last Name">
+         
+          <div *ngIf="signupForm.get('last_name').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.last_name[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input formControlName="number" type="tel" class="form-control number" [class.err]="signupForm.get('number').hasError('pattern')" placeholder="Phone">
+         
+          <div *ngIf="signupForm.get('number').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.number[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input formControlName="password" type="password" class="form-control password" [class.err]="signupForm.get('password').hasError('pattern')" placeholder="Password">
+         
+          <div *ngIf="signupForm.get('password').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.password[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input formControlName="city" type="city" class="form-control city" [class.err]="signupForm.get('city').hasError('pattern')" placeholder="City">
+          <!-- <select formControlName="city" type="city" class="form-control city" [class.err]="signupForm.get('city').hasError('pattern')" placeholder="City">
+
+          </select> -->
+          <div *ngIf="signupForm.get('city').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.city[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group text-left">
+          <input formControlName="tc" type="checkbox" class=" tc" [class.err]="signupForm.get('tc').hasError('pattern')">
+          <label>Yes, I understand and agree to the Heera <a>Terms of services</a>, including the <a>User Agreement</a> and <a>Privacy Policy</a>.</label>
+
+          <div *ngIf="signupForm.get('city').hasError('pattern')">
+            <p class="errText">
+              <ngx-fa class="mr-2" name="exclamation"></ngx-fa>{{validation_messages.city[0]?.message}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group text-left">
+          <input formControlName="want_emails" type="checkbox" class="tc" [class.err]="signupForm.get('want_emails').hasError('pattern')">
+          <label>Yes, Send me genuinely useful emails every now and then to help me get the best out of Heera Tech.</label>
+        </div>
+
+
+
+        
+
+        <button type="button" class="btn" (click)="signUp()">Create My Account</button><br>
+        <span>Already have an account? <span>Login</span></span>
+      </div>
+
+
+    </form>
+
+  </div>
+</section>

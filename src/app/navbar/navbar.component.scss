@@ -39,6 +39,7 @@ nav.my-nav{
     }
     .nav-link{
         transition: .3s;
+        text-align: left;
     }
     .nav-link:hover,.navbar-brand:hover,.btn-group a:hover{
         color:$font-color;

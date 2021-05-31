@@ -1,0 +1,113 @@
+@import "src/variables";
+nav.my-nav{
+    background-color: transparent!important;
+    .navbar-brand{
+        img{
+            width:300px;
+            height:100px;
+        }
+    }
+}
+#choose{
+    .container{
+        min-height: 40vh;
+        padding-top:80px;
+        button{
+            background-color: transparent;
+            border:1px solid $bg-color;
+            color: $bg-color;
+            width:250px;
+            height:50px;
+            margin-top:40px;
+        }
+        button:hover{
+            background-color: $button1-bgColor;
+            border:1px solid $button1-bgColor;
+            color:#fff;
+        }
+    }
+}
+#signup{
+    min-height: 50vh;
+    form{
+        color:$font-color2;
+        .continue-email{
+            width:70%;
+            padding:40px 10px;
+            margin:0 auto;
+            border:1px solid rgba(0,0,0,.1);
+            margin-top:40px;
+            input{
+                width:70%;
+                margin:auto;
+                margin-top:40px;
+            }
+            input.err{
+                border:1px solid rgb(233, 49, 49);
+            }
+            button{
+                background-color: transparent;
+                border:1px solid $bg-color;
+                color: $bg-color;
+                width:250px;
+                height:50px;
+                margin-top:40px;
+                border-radius: 30px;
+            }
+            button:disabled{
+                opacity: .3;
+            }
+            span{
+                span{
+                    cursor: pointer;
+                    color:$font-color;
+                }
+            }
+
+            //step 2
+            h2{
+                margin-bottom: 40px;
+            }
+            .form-group{
+                width:70%;
+                margin:auto;
+                input{
+                    margin-top:20px;
+                    width:100%;
+                }
+                input[type="checkbox"]{
+                    display: inline-block;
+                    width:auto;
+                }
+                label{
+                    display: inline;
+                    margin-left: 10px;
+                }
+
+            }
+            // .form-group.half{
+            //     width:50%;
+            //     display: inline-block;
+            // }
+        }
+        .errText{
+            color:rgb(233, 49, 49);
+            span{
+                color:$font-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media(min-width:200px) and (max-width:600px){
+    #signup{
+        form{
+            input{
+                width: 100%!important;
+            }
+            button{
+                width:100%!important;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import "src/variables";
+#verify{
+    color:$font-color3;
+    padding:30px 0;
+    .check{
+        margin:20px auto;
+        width:200px;
+        height:200px;
+        border: 6px solid $font-color;
+        border-radius: 50%;
+        
+    }
+    ngx-fa{
+        color:$font-color;
+        margin-top:24%;
+        display: inline-block;
+        font-size: 4rem;
+    }
+    input{
+        margin:auto;
+    }
+    button{
+        border:1px solid $button1-bgColor;
+        background-color: #fff;
+        width:200px;
+        height:40px;
+        color:$button1-bgColor;
+        text-align: center;
+        margin-top:20px;
+        margin-right: 10px;
+    }
+    button:hover{
+        background-color: $button1-bgColor;
+        color:#fff;
+    }
+}

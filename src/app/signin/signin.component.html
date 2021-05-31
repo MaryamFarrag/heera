@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-nav" ngxNavbarDynamicExpand>
+  <a class="navbar-brand" routerLink="/"><img class="img-fluid" src="assets/logo.png"></a>
+</nav>
+<section id="choose" *ngIf="screen == 'accountChoice'">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-6">
+        <div class="choice">
+          <button (click)="chooseType(1)" class="btn">Login as a Client &#8594;</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="choice">
+          <button (click)="chooseType(2)" class="btn">Login as a Partner &#8594;</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="signIn" *ngIf="screen == 'signin' ">
+  <div class="container text-center">
+    <h2>Login to Heera Tech</h2>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+      <input class="form-control" name="email" ngModel>
+      <input class="form-control" name="password" type="password" ngModel>
+      <div class="row">
+        <div>
+          <input type="checkbox" class="mr-2">
+          <label>Keep me logged in</label>
+        </div>
+        <div class="forgot-pass">
+          <span>
+            Forgot password?
+
+          </span>
+        </div>
+      </div>
+     
+      <button class="btn">Sign in</button>
+    </form>
+  </div>
+
+</section>
