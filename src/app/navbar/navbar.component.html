@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ngx-navbar-collapse #collapse="ngxNavbarCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ngx-navbar-collapse *ngIf="!isSigned" #collapse="ngxNavbarCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="mr-auto navbar-nav">
       <!-- INDUSTRIES -->
       <li>
@@ -91,6 +91,77 @@
      <li>
       <a class="nav-link btn signup" (click)="collapse.toggle()" routerLink="/signup">{{"SIGN UP"}}</a>
      </li>
+     
+   </ul>
+   
+  </ngx-navbar-collapse>
+
+  <ngx-navbar-collapse *ngIf="isSigned" #collapse="ngxNavbarCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="mr-auto navbar-nav">
+      <li>
+        <form class="form-inline my-2 my-lg-0">
+          <span class="circle"></span>
+          <input class="form-control mr-sm-2" type="search" placeholder="SEARCH" name="search" aria-label="Search">
+          <button type="submit">
+            <ngx-fa name="search" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa>
+  
+          </button>
+        </form>
+      </li>
+    </ul>
+
+   <ul class="navbar-nav ml-auto pr-5">
+  
+     <li>
+      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Jobs"}}</a>
+     </li>
+
+     <li>
+      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Talents"}}</a>
+     </li>
+
+     <li>
+      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Report"}}</a>
+     </li>
+
+     <li>
+      <div class="btn-group">
+        <a class="nav-link btn login p-0">
+          <div class="profile">
+            <ngx-fa name="user"></ngx-fa>
+          </div>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li class="submenu" *ngIf="!isClient" routerLink="/profile/partener">
+            <p>Username</p>
+            
+            <span >Partner</span>
+
+          </li>
+           <li class="submenu"  *ngIf="isClient" routerLink="/profile/client">
+            <p>Username</p>
+            
+            <span>Client</span>
+
+          </li>
+
+          <li class="submenu">
+            <ngx-fa name="cog"></ngx-fa>
+            <p>Settings</p>            
+          </li>
+
+          <li class="submenu" (click)="logout()">
+            <ngx-fa name="sign-out"></ngx-fa>
+            <p>Logout</p>
+            
+          </li>
+        </ul>
+      </div>
+      
+   
+     </li>
+    
      
    </ul>
    

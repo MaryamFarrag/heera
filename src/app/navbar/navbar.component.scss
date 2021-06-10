@@ -51,14 +51,42 @@ nav.my-nav{
     
     .dropdown-menu{
         transition: 1s;
+        left:-90px;
         li{
             margin-bottom: 5px;
             padding:5px;
             border-bottom: 1px solid rgba(0,0,0,0.2);
             cursor: pointer;
         }
+        .submenu{
+            p,ngx-fa{
+                color:$font-color2;
+                display:inline-block;
+                margin:0 5px;
+            }
+            span{
+                color:$font-color3;
+                font-size: 13px;
+                display: block;
+                margin:0 5px;
+            }
+        }
     }
     .btn-group:hover .dropdown-menu {
         display: block;
+    }
+
+    .profile{
+        background-color: #dadada;
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        text-align: center;
+        padding-top:0;
+        cursor: pointer;
+        ngx-fa{
+            color:#fff;
+            font-size: 2rem;
+        }
     }
 }

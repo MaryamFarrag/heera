@@ -1,0 +1,153 @@
+@import "src/variables";
+
+#client-profile{
+    margin:20px 0 ;
+    min-height:70vh;
+    .header{
+        border:1px solid rgba(0,0,0,.1);
+        border-radius: 5px;
+        padding:20px 25px;
+        .user{
+            display: flex;
+        }
+        .img{
+            width:100px;
+            height:100px;
+            img{
+                height:100%;
+                width:100%;
+                border-radius:50% ;
+
+            }
+        }
+        .info{
+            margin-left:10px;
+            p{
+                margin-top:20px;
+                margin-bottom:0;
+                font-size: 25px;
+                color:$font-color2;
+                font-weight: 700;
+
+            }
+            span,i{
+                color:$font-color3;
+            }
+        }
+        .title{
+            text-align: center;
+            p{
+                color:$font-color2;
+                font-size:20px;
+                margin-top:10px;
+                font-weight: 700;
+                display: inline-block;
+                margin-right:10px;
+            }
+            button{
+                border:1px solid $font-color;
+                color:$font-color;
+                background-color: transparent;
+                border-radius:7px;
+                width:100%;
+                height:40px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: $font-color;
+                color:#fff;
+            }
+        }
+    }
+    .details{
+        margin-top:20px;
+        tabset{
+            display: flex;
+            ::ng-deep ul{
+                width:55%;
+                margin-right: 20px;
+                border:1px solid rgba(0,0,0,.1);
+                border-radius: 5px;
+                position: relative;
+                padding:20px;
+                height:220px;
+                .nav-link.active, .nav-pills .show>.nav-link{
+                    background-color: $font-color;
+                    color:#fff;
+                }
+                a{
+                    color:$font-color;
+                }
+            }
+            ::ng-deep ul:after{
+                position: absolute;
+                content:'';
+                width:100px;
+                height:100px;
+                background-color: $bg-color;
+                bottom:0;
+                left:0;
+                opacity: .1;
+                z-index: 0;
+                transform: rotate(20deg) translate(-50px);
+            }
+            ::ng-deep .tab-content{
+                width:145%;
+                border:1px solid rgba(0,0,0,.1);
+                border-radius: 5px;
+                padding:20px;
+                position: relative;
+                .cats{
+                    label{
+                        font-weight: 700;
+                        font-size: 18px;
+                        color:$font-color2;
+                    }
+                    select{
+                        display: block;
+                        padding:10px 15px;
+                        border:none;
+                        background-color: #f8f8f8;
+                        width:100%;
+                        margin:10px 0;
+                    }
+                }
+            }
+            ::ng-deep .tab-content:after{
+                position: absolute;
+                content:'';
+                width:100px;
+                height:100px;
+                border-radius: 50%;
+                background-color: $font-color;
+                bottom:0;
+                right:0;
+                opacity: .1;
+                z-index: 0;
+                transform: rotate(70deg) translate(-50px);
+            }
+        }
+     
+        .user-desc{
+            h1{
+                color:$font-color2;
+            }
+            p{
+                color:$font-color3;
+            }
+        }
+        .user-desc:after{
+            position: absolute;
+            content:'';
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background-color: $font-color;
+            bottom:0;
+            right:0;
+            opacity: .1;
+            z-index: 0;
+            transform: rotate(70deg) translate(-50px);
+        }
+    }
+}

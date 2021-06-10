@@ -1,12 +1,24 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
-  url = 'http://74.208.206.25:8080/api'
-  constructor(public http: HttpClient) { }
+  url = 'https://uc.ksesystem.com/public/api';
+
+  isSigned;
+  constructor(public http: HttpClient) {
+    this.isSigned = new BehaviorSubject(localStorage.getItem('heera_token'));
+   }
+
+   set signin(val){
+    this.isSigned.next(val); 
+  }
+  get signin(){
+    return this.isSigned;
+  }
 
   emailExists(email){
     return this.http.post(`${this.url}/checkemail`,{email:email})

@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
   constructor(private router:Router,private _userService:UserServiceService,private toastr: ToastrService) { }
 
   ngOnInit() {
+    localStorage.clear();
   }
 
   chooseType(type){
@@ -25,12 +26,23 @@ export class SigninComponent implements OnInit {
   }
 
   login(value){
-    localStorage.setItem('email',value.email)
+    localStorage.setItem('email',value.email);
+    
+    // localStorage.setItem('client','test');
+    // localStorage.setItem('heera_token','qwertyui');
+    // this._userService.signin = true;
+    // this.router.navigate(['/']);
+
     if(this.accountChoice == 1){//client
       this._userService.signinEmployee(value).subscribe((res:any)=>{
-        console.log(res);
+
         if(res.status){
-          this.router.navigate(['/']);
+
+          localStorage.setItem('client','test');
+          localStorage.setItem('heera_token','qwertyui');
+          this._userService.signin = true;
+
+          this.router.navigate(['/profile/client']);
         }
         else{
           this.toastr.error(res.msg);
@@ -40,26 +52,31 @@ export class SigninComponent implements OnInit {
         }
       },err=>{
         console.log(err);
-        this.toastr.error("Something went wrong")
+        this.toastr.error("Something went wrong");
       })
     }else{//partner
       this._userService.signinEmployer(value).subscribe((res:any)=>{
-        console.log(res);
+
         if(res.status){
-          this.router.navigate(['/']);
+          localStorage.setItem('heera_token','qwertyui');
+          localStorage.setItem('partner','test');
+          this._userService.signin = true;
+
+          this.router.navigate(['/profile/partner']);
         }
+
         else{
           this.toastr.error(res.msg)
           if(res.msg == 'Account is not verified Please Verify the Account'){
             this.router.navigate(['/verify']);
           }
         }
+
       },err=>{
         console.log(err);
         this.toastr.error("Something went wrong")
       })
     }
-    console.log('value',value);
   }
 
 }

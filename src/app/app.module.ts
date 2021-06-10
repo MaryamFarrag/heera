@@ -5,6 +5,8 @@ import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
@@ -16,6 +18,8 @@ import { SigninComponent } from './signin/signin.component';
 import { VerifyComponent } from './verify/verify.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { ClientComponent } from './profile/client/client.component';
+import { PartnerComponent } from './profile/partner/partner.component';
 
 
 
@@ -27,7 +31,9 @@ import { ToastrModule } from 'ngx-toastr';
     LandingComponent,
     SignupComponent,
     SigninComponent,
-    VerifyComponent
+    VerifyComponent,
+    ClientComponent,
+    PartnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +45,7 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    TabsModule.forRoot()
 
   ],
   providers: [
