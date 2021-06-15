@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserServiceService } from './user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(public router: Router){}
+  constructor(public router: Router,private _userService:UserServiceService){
+    if(localStorage.getItem('token')){
+      this._userService.signin = true;
+    }
+    
+  }
 
   title = 'HeeraTechnologies';
+
 }

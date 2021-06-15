@@ -24,7 +24,6 @@
     "ngx-bootstrap": "^5.6.2",
     "ngx-bootstrap-navbar": "0.0.5",
     "ngx-font-awesome": "^1.0.0",
-    "ngx-navbar": "0.0.3",
     "ngx-toastr": "^10.0.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

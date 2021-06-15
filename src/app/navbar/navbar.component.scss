@@ -31,6 +31,10 @@ nav.my-nav{
             border-radius: 50%; 
         }
     }
+    .logged-form{
+        width:400px;
+        margin-left:10px;
+    }
     .navbar-brand{
         img{
             width:300px;
@@ -89,4 +93,11 @@ nav.my-nav{
             font-size: 2rem;
         }
     }
+   
+}
+.narrow{
+    padding:0 100px;
+}
+.fs-18{
+    font-size: 18px;
 }

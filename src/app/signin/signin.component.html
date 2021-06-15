@@ -31,7 +31,7 @@
           <label>Keep me logged in</label>
         </div>
         <div class="forgot-pass">
-          <span>
+          <span (click)="screen = 'forgotPass'">
             Forgot password?
 
           </span>
@@ -39,6 +39,19 @@
       </div>
      
       <button class="btn">Sign in</button>
+    </form>
+  </div>
+
+</section>
+
+
+<section id="signIn" *ngIf="screen == 'forgotPass' ">
+  <div class="container text-center">
+    <h2>Enter your email</h2>
+    <form #loginForm="ngForm" (ngSubmit)="forgotPass(loginForm.value)">
+      <input class="form-control" name="email" ngModel>
+     
+      <button class="btn">Send</button>
     </form>
   </div>
 

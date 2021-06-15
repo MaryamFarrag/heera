@@ -122,10 +122,11 @@ export class SignupComponent implements OnInit {
 
   checkEmail(value){
       this._userService.emailExists(value).subscribe((res2:any)=>{
-        console.log('res',res2);
-        if(!res2.status){
+        return this.emailExists = false;
+      },err=>{
+        // if(!res2.success){
           return this.emailExists = true;
-        }
+        // }
       })    
   }
 
@@ -133,19 +134,16 @@ export class SignupComponent implements OnInit {
     console.log('data =>',this.signupForm);
     if(this.signupForm.valid){
       if(this.accountChoice == 1){
-        this._userService.signUpClient(this.signupForm.value).subscribe(res=>{
-          console.log('signined?',res);
-          localStorage.setItem('email',this.signupForm.value.email)
-          this.router.navigate(['/verify']);
-        })
+        this.signupForm.value.userType = "client";
       }
       if(this.accountChoice == 2){
-        this._userService.signUpPartner(this.signupForm.value).subscribe(res=>{
-          console.log('signined?',res);
-          localStorage.setItem('email',this.signupForm.value.email)
-          this.router.navigate(['/verify']);
-        })
+        this.signupForm.value.userType = "partner";
       }
+      this._userService.signUp(this.signupForm.value).subscribe(res=>{
+        console.log('signined?',res);
+        localStorage.setItem('email',this.signupForm.value.email)
+        this.router.navigate(['/']);
+      })
      
     }
     else{

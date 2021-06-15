@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light my-nav" ngxNavbarDynamicExpand>
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-nav" [class.narrow]="isSigned" ngxNavbarDynamicExpand>
   <a class="navbar-brand" routerLink="/"><img class="img-fluid" src="assets/logo.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="collapse.toggle()" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -99,11 +99,11 @@
   <ngx-navbar-collapse *ngIf="isSigned" #collapse="ngxNavbarCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="mr-auto navbar-nav">
       <li>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline logged-form my-2 my-lg-0">
           <span class="circle"></span>
           <input class="form-control mr-sm-2" type="search" placeholder="SEARCH" name="search" aria-label="Search">
           <button type="submit">
-            <ngx-fa name="search" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa>
+            <ngx-fa name="search" id="navSearch" size="lg"></ngx-fa>
   
           </button>
         </form>
@@ -113,15 +113,15 @@
    <ul class="navbar-nav ml-auto pr-5">
   
      <li>
-      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Jobs"}}</a>
+      <a class="nav-link btn login fs-18" (click)="collapse.toggle()">{{"Jobs"}}</a>
      </li>
 
      <li>
-      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Talents"}}</a>
+      <a class="nav-link btn login fs-18" (click)="collapse.toggle()">{{"Talents"}}</a>
      </li>
 
      <li>
-      <a class="nav-link btn login" (click)="collapse.toggle()">{{"Report"}}</a>
+      <a class="nav-link btn login fs-18" (click)="collapse.toggle()">{{"Report"}}</a>
      </li>
 
      <li>

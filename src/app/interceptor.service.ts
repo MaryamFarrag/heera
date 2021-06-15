@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 export class InterceptorService {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {    
-    if ((req.url.includes('registervendor/') && (req.method == "POST")) || req.url.includes('registerclient/') && (req.method == "POST") || req.url.includes('emplyerLogin/') && (req.method == "POST") || req.url.includes('emplyeeLogin/') && (req.method == "POST") ) {
+    if ((req.url.includes('/registeruser') && (req.method == "POST")) || req.url.includes('/login') && (req.method == "POST")) {
       
       return next.handle(req).pipe(map(event => {
         if (event instanceof HttpResponse) {
           
             let token
-            if(event.body.access_token){
-              token = event.body.access_token; 
+            if(event.body.data){
+              token = event.body.data.token; 
               localStorage.setItem('token', token)
             }   
             else{
@@ -31,7 +31,7 @@ export class InterceptorService {
       }
       let token = localStorage.getItem('token');
       if (token) {        
-        let authorizedReq = req.clone({ setHeaders: {'Authorization': `Token ${token}`}});
+        let authorizedReq = req.clone({ setHeaders: {'Authorization': `Bearer ${token}`}});
         return next.handle(authorizedReq);
       }else{
         return next.handle(req);
