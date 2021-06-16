@@ -6,6 +6,7 @@ import { InterceptorService } from './interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ClientComponent } from './profile/client/client.component';
 import { PartnerComponent } from './profile/partner/partner.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 
 
 
@@ -34,6 +36,7 @@ import { PartnerComponent } from './profile/partner/partner.component';
     VerifyComponent,
     ClientComponent,
     PartnerComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,8 +48,8 @@ import { PartnerComponent } from './profile/partner/partner.component';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    TabsModule.forRoot()
-
+    TabsModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },

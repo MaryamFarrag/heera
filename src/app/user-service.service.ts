@@ -65,4 +65,9 @@ export class UserServiceService {
   forgotPass(data){
     return this.http.post(`${this.url}/resetpassword/`,{email:data.email})
   }
+
+  changePassword(data){
+    return this.http.post(`${this.url}/changepassword/`,data)
+
+  }
 }

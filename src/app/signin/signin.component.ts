@@ -57,60 +57,20 @@ export class SigninComponent implements OnInit {
       }
     },err=>{
       console.log(err);
-      this.toastr.error("Something went wrong");
+      if(err.error){
+        this.toastr.error(err.error.message);
+      }
+      else{
+        this.toastr.error("Something went wrong");
+      }
     })
 
-    // if(this.accountChoice == 1){//client
-    //   this._userService.login(value).subscribe((res:any)=>{
-
-    //     if(res.status){
-
-    //       localStorage.setItem('client','test');
-    //       localStorage.setItem('heera_token','qwertyui');
-    //       this._userService.signin = true;
-
-    //       this.router.navigate(['/profile/client']);
-    //     }
-    //     else{
-    //       this.toastr.error(res.msg);
-    //       if(res.msg == 'Account is not verified Please Verify the Account'){
-    //         this.router.navigate(['/verify']);
-    //       }
-    //     }
-    //   },err=>{
-    //     console.log(err);
-    //     this.toastr.error("Something went wrong");
-    //   })
-    // }
-    // else{//partner
-    //   this._userService.signinEmployer(value).subscribe((res:any)=>{
-
-    //     if(res.status){
-    //       localStorage.setItem('heera_token','qwertyui');
-    //       localStorage.setItem('partner','test');
-    //       this._userService.signin = true;
-
-    //       this.router.navigate(['/profile/partner']);
-    //     }
-
-    //     else{
-    //       this.toastr.error(res.msg)
-    //       if(res.msg == 'Account is not verified Please Verify the Account'){
-    //         this.router.navigate(['/verify']);
-    //       }
-    //     }
-
-    //   },err=>{
-    //     console.log(err);
-    //     this.toastr.error("Something went wrong")
-    //   })
-    // }
   }
   forgotPass(data){
     this._userService.forgotPass(data).subscribe((res:any)=>{
-      console.log('res',res);
       if(res.success){
         this.toastr.show(res.message)
+        this.screen = 'accountChoice';
       }else{
         this.toastr.error(res.message)
       }

@@ -132,23 +132,43 @@
           </div>
         </a>
 
-        <ul class="dropdown-menu">
-          <li class="submenu" *ngIf="!isClient" routerLink="/profile/partener">
+        <ul class="dropdown-menu dropdown-menu1">
+           <li class="submenu user">
+             <div class="user-img">
+              <ngx-fa name="user"></ngx-fa>
+             </div>
             <p>Username</p>
             
-            <span >Partner</span>
+            <span>{{isClient?'Client':'Partner'}}</span>
 
           </li>
-           <li class="submenu"  *ngIf="isClient" routerLink="/profile/client">
-            <p>Username</p>
-            
-            <span>Client</span>
-
+          <li   *ngIf="isClient" class="submenu" routerLink="/profile/client">
+            <ngx-fa name="cog"></ngx-fa>
+            <p>Profile</p>
+          </li>
+          <li   *ngIf="!isClient" class="submenu" routerLink="/profile/partner">
+            <ngx-fa name="user"></ngx-fa>
+            <p>Profile</p>
           </li>
 
           <li class="submenu">
-            <ngx-fa name="cog"></ngx-fa>
-            <p>Settings</p>            
+            <div class="btn-group2">
+              <a class="nav-link p-0">
+                <ngx-fa name="cog"></ngx-fa>
+                <p>Settings</p> 
+              </a>
+              <ul class="dropdown-menu dropdown-menu2">
+                <li class="submenu">
+                  <ngx-fa name="user"></ngx-fa>
+                  <a>My Info</a>
+                </li>
+                <li class="submenu" routerLink="profile/change-password">
+                  <ngx-fa name="lock"></ngx-fa>
+                  <a>Password & Security</a>
+                </li>
+              </ul>
+            </div>
+                    
           </li>
 
           <li class="submenu" (click)="logout()">

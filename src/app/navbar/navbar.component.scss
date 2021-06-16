@@ -44,13 +44,15 @@ nav.my-nav{
     .nav-link{
         transition: .3s;
         text-align: left;
-    }
-    .nav-link:hover,.navbar-brand:hover,.btn-group a:hover{
         color:$font-color;
     }
-    .btn-group{
+    .nav-link:hover,.navbar-brand:hover,.btn-group a:hover,.btn-group2 a:hover{
+        color:$font-color2;
+    }
+    .btn-group,.btn-group2{
         cursor: pointer;
         transition: 1s;
+        position: relative;
     }
     
     .dropdown-menu{
@@ -59,12 +61,15 @@ nav.my-nav{
         li{
             margin-bottom: 5px;
             padding:5px;
-            border-bottom: 1px solid rgba(0,0,0,0.2);
+            // border-bottom: 1px solid rgba(0,0,0,0.2);
             cursor: pointer;
+        }
+        li:not(.user):hover{
+            background-color: #dadada;
         }
         .submenu{
             p,ngx-fa{
-                color:$font-color2;
+                color:$font-color3;
                 display:inline-block;
                 margin:0 5px;
             }
@@ -74,9 +79,29 @@ nav.my-nav{
                 display: block;
                 margin:0 5px;
             }
+            .user-img{
+                background-color: #dadada;
+                border-radius: 50%;
+                width:20px;
+                height:20px;
+                display: inline-block;
+                ngx-fa{
+                    color:white;
+                }
+            }
         }
     }
-    .btn-group:hover .dropdown-menu {
+    .dropdown-menu2{
+        display: none;
+        left:-120px;
+        transition: 1;
+        background-color: white;
+        position: absolute;
+    }
+    .btn-group:hover .dropdown-menu1 {
+        display: block;
+    }
+    .btn-group2:hover .dropdown-menu2 {
         display: block;
     }
 
@@ -96,7 +121,7 @@ nav.my-nav{
    
 }
 .narrow{
-    padding:0 100px;
+    padding:0 120px;
 }
 .fs-18{
     font-size: 18px;
