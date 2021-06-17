@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private _userService:UserServiceService,private router:Router) {
     let EMAILPATTERN = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-    let PHONRPATTERN = /^[0-9]{1,10}$/;
+    let PHONRPATTERN = /^[0-9]{10}$/;
     let PASSWORDPATTERN =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
     this.signupForm = this.formBuilder.group({
