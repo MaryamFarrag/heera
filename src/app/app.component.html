@@ -1,4 +1,4 @@
 
-<app-navbar *ngIf="router.url !== '/signin' && router.url !== '/signup'"></app-navbar>
+<app-navbar *ngIf="!router.url.includes('/signin') && !router.url.includes('/signup')"></app-navbar>
 <router-outlet></router-outlet>
-<app-footer *ngIf="router.url !== '/signin' && router.url !== '/signup' ">
+<app-footer *ngIf="!router.url.includes('/signin') && !router.url.includes('/signup')">

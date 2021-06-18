@@ -22,6 +22,7 @@
 <section id="signIn" *ngIf="screen == 'signin' ">
   <div class="container text-center">
     <h2>Login to Heera Tech</h2>
+    <h3>{{text}}</h3>
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
       <input class="form-control" name="email" ngModel>
       <input class="form-control" name="password" type="password" ngModel>

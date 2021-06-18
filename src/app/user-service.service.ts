@@ -67,7 +67,7 @@ export class UserServiceService {
   }
 
   changePassword(data){
-    return this.http.post(`${this.url}/changepassword/`,data)
+    return this.http.post(`${this.url}/changepassword/`,{password:data.password,email:localStorage.getItem('email')})
 
   }
 }

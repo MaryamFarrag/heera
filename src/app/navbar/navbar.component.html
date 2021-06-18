@@ -10,8 +10,8 @@
       <!-- INDUSTRIES -->
       <li>
         <div class="btn-group">
-          <a class="nav-link pb-1">Industries <ngx-fa name="caret-down" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa></a>
-          <ul class="dropdown-menu">
+          <a class="nav-link pb-1">Industries <ngx-fa name="caret-down" size="lg"></ngx-fa></a>
+          <ul class="dropdown-menu dropdown-menu1">
             <li class="industry" [routerLink]="['/filters']">
               <a>Industry1</a>
             </li>
@@ -34,10 +34,9 @@
               <a>Industry7</a>
             </li>
           </ul>
-        </div>
-        
+        </div>  
       </li>
-      <!-- PRODUCT -->
+
       <li>
         <a class="nav-link btn login" (click)="collapse.toggle()" routerLink="/product">product</a>
       </li>
@@ -45,7 +44,7 @@
       <li>
         <div class="btn-group">
           <a class="nav-link pb-1">Companies <ngx-fa name="caret-down" id="navSearch" (click)="collapse.toggle()" size="lg"></ngx-fa></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu1">
             <li class="company" [routerLink]="['/filters']">
               <a>company1</a>
             </li>
@@ -108,10 +107,7 @@
           </button>
         </form>
       </li>
-    </ul>
-
-   <ul class="navbar-nav ml-auto pr-5">
-  
+      
      <li>
       <a class="nav-link btn login fs-18" (click)="collapse.toggle()">{{"Jobs"}}</a>
      </li>
@@ -124,7 +120,12 @@
       <a class="nav-link btn login fs-18" (click)="collapse.toggle()">{{"Report"}}</a>
      </li>
 
-     <li>
+     
+
+    </ul>
+
+   <ul class="navbar-nav mr-auto pr-5">
+    <li>
       <div class="btn-group">
         <a class="nav-link btn login p-0">
           <div class="profile">
@@ -181,6 +182,7 @@
       
    
      </li>
+    
     
      
    </ul>

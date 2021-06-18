@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,11 +13,20 @@ export class SigninComponent implements OnInit {
   screen:string = 'accountChoice';
   accountChoice:number = 0;
 
+  text:string;
 
-  constructor(private router:Router,private _userService:UserServiceService,private toastr: ToastrService) { }
+
+  constructor(private router:Router,private _userService:UserServiceService,private toastr: ToastrService,private route:ActivatedRoute) { }
 
   ngOnInit() {
     localStorage.clear();
+    this.route.params.subscribe(res=>{
+      this.text = res.text;
+      if(res.screen){
+        this.screen = res.screen;
+      }
+    })
+    
   }
 
   chooseType(type){
@@ -36,9 +45,11 @@ export class SigninComponent implements OnInit {
     this._userService.login(value).subscribe((res:any)=>{
 
       if(res.success){
+        console.log(res);
+        
         // localStorage.setItem('heera_token','qwertyui');
         this._userService.signin = true;
-        if(this.accountChoice == 1){//client
+        if(res.data.role == 'client'){//client
           localStorage.setItem('client','test');
 
           this.router.navigate(['/profile/client']);
@@ -50,10 +61,7 @@ export class SigninComponent implements OnInit {
         }
       }
       else{
-        this.toastr.error(res.msg);
-        if(res.msg == 'Account is not verified Please Verify the Account'){
-          this.router.navigate(['/verify']);
-        }
+        this.toastr.error(res.message); 
       }
     },err=>{
       console.log(err);
