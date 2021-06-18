@@ -78,7 +78,8 @@ export class SigninComponent implements OnInit {
     this._userService.forgotPass(data).subscribe((res:any)=>{
       if(res.success){
         this.toastr.show(res.message)
-        this.screen = 'accountChoice';
+        this.screen = 'signin';
+        this.text = 'An email has been sent to you with the new password, please check your email.';
       }else{
         this.toastr.error(res.message)
       }
