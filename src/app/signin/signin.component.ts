@@ -14,6 +14,7 @@ export class SigninComponent implements OnInit {
   accountChoice:number = 0;
 
   text:string;
+  loginText:string;
 
 
   constructor(private router:Router,private _userService:UserServiceService,private toastr: ToastrService,private route:ActivatedRoute) { }
@@ -42,7 +43,7 @@ export class SigninComponent implements OnInit {
     // this._userService.signin = true;
     // this.router.navigate(['/']);
     if(!value.email){
-      return this.text = 'Please enter your correct email and password.';
+      return this.loginText = 'Please enter your correct email and password.';
     }
 
     this._userService.login(value).subscribe((res:any)=>{
