@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserServiceService } from '../user-service.service';
 
@@ -10,10 +10,14 @@ import { UserServiceService } from '../user-service.service';
 })
 export class VerifyComponent implements OnInit {
 
-  constructor(private _userService:UserServiceService,private router:Router,private toastr: ToastrService) { }
+  constructor(private _userService:UserServiceService,private router:Router,private toastr: ToastrService,private route:ActivatedRoute) { }
   otp;
+  text
 
   ngOnInit() {
+    this.route.params.subscribe(res=>{
+      this.text = res.text;
+    })
   }
 
   send(){

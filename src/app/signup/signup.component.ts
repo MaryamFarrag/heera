@@ -144,7 +144,7 @@ export class SignupComponent implements OnInit {
         console.log('signined?',res);
         localStorage.setItem('email',this.signupForm.value.email);
         this.toaster.success("An email has been sent to you, please verify.")
-        this.router.navigate(['/signin']);
+        this.router.navigate(['/verify',{text:'An email has been sent to you, please verify your email.'}]);
       })
      
     }

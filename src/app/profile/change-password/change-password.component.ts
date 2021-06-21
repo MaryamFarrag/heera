@@ -27,6 +27,7 @@ export class ChangePasswordComponent implements OnInit {
       // this.router.navigate(['/signin',{text:'Password changed. type your new password',screen:'signin'}]);
       this._userService.changePassword(data.value).subscribe(res=>{
         this.toastr.success("Password changed. Thank you.");
+        this.router.navigate(['/verify',{text:'Your password has been changed. Thank you.'}]);
         // this.router.navigate(['/signin',{text:'Password changed. type your new password',screen:'signin'}]);
       },err=>{
         if(err.error){

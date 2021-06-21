@@ -41,6 +41,9 @@ export class SigninComponent implements OnInit {
     // localStorage.setItem('heera_token','qwertyui');
     // this._userService.signin = true;
     // this.router.navigate(['/']);
+    if(!value.email){
+      return this.text = 'Please enter your correct email and password.';
+    }
 
     this._userService.login(value).subscribe((res:any)=>{
 
@@ -49,15 +52,23 @@ export class SigninComponent implements OnInit {
         
         // localStorage.setItem('heera_token','qwertyui');
         this._userService.signin = true;
-        if(res.data.role == 'client'){//client
+        if(res.data.role == 'client' && this.accountChoice == 1){//client
           localStorage.setItem('client','test');
 
           this.router.navigate(['/profile/client']);
         }
-        else{
+        else if( res.data.role == 'client' && this.accountChoice != 1){
+          this.text = 'Please sign in as a client';
+          this.screen = 'accountChoice'
+         
+        }
+        else if( res.data.role == 'partner' && this.accountChoice != 1){
           localStorage.setItem('partner','test');
-
           this.router.navigate(['/profile/partner']); 
+        }
+        else{
+          this.text = 'Please sign in as a partner';
+          this.screen = 'accountChoice';
         }
       }
       else{
@@ -77,9 +88,8 @@ export class SigninComponent implements OnInit {
   forgotPass(data){
     this._userService.forgotPass(data).subscribe((res:any)=>{
       if(res.success){
-        this.toastr.show(res.message)
-        this.screen = 'signin';
-        this.text = 'An email has been sent to you with the new password, please check your email.';
+        this.toastr.show(res.message);
+        this.router.navigate(['/verify',{text:'An email has been sent to you with the new password, please check your email.'}])
       }else{
         this.toastr.error(res.message)
       }
