@@ -58,7 +58,7 @@ export class UserServiceService {
 
     content.append('email',data.email);
     content.append('password',data.password);
-    return this.http.post(`${this.url}/login`,content)
+    return this.http.post(`${this.url}/login/`,content)
 
   }
 

@@ -15,6 +15,7 @@ export class SigninComponent implements OnInit {
 
   text:string;
   loginText:string;
+  hide:string;
 
 
   constructor(private router:Router,private _userService:UserServiceService,private toastr: ToastrService,private route:ActivatedRoute) { }
@@ -52,23 +53,28 @@ export class SigninComponent implements OnInit {
         console.log(res);
         
         // localStorage.setItem('heera_token','qwertyui');
-        this._userService.signin = true;
         if(res.data.role == 'client' && this.accountChoice == 1){//client
           localStorage.setItem('client','test');
-
           this.router.navigate(['/profile/client']);
+
+          this._userService.signin = true;
+
         }
         else if( res.data.role == 'client' && this.accountChoice != 1){
           this.text = 'Please sign in as a client';
-          this.screen = 'accountChoice'
+          this.screen = 'accountChoice';
+          this.hide = "partner";
          
         }
         else if( res.data.role == 'partner' && this.accountChoice != 1){
           localStorage.setItem('partner','test');
           this.router.navigate(['/profile/partner']); 
+
+          this._userService.signin = true;
         }
         else{
           this.text = 'Please sign in as a partner';
+          this.hide = "client";
           this.screen = 'accountChoice';
         }
       }
@@ -94,6 +100,15 @@ export class SigninComponent implements OnInit {
       }else{
         this.toastr.error(res.message)
       }
+    })
+  }
+  resend(){
+    this._userService.resendOtp().subscribe(res=>{
+      console.log('resent',res);
+      this.toastr.show("OTP sent.")
+      
+    },err=>{
+      this.toastr.error("Couldn't resned OTP now, Try again later.")
     })
   }
 

@@ -8,12 +8,12 @@
 
     <div class="row text-center">
       <div class="col-md-6">
-        <div class="choice">
+        <div class="choice" *ngIf="hide !='client'">
           <button (click)="chooseType(1)" class="btn">Login as a Client &#8594;</button>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="choice">
+        <div class="choice"  *ngIf="hide !='partner'">
           <button (click)="chooseType(2)" class="btn">Login as a Partner &#8594;</button>
         </div>
       </div>
@@ -41,7 +41,9 @@
         </div>
       </div>
      
-      <button class="btn">Sign in</button>
+      <button class="btn">Sign in</button><br>
+      <button class="" *ngIf="isInvalid" (click)="resend()">Resend OTP</button>
+
     </form>
   </div>
 

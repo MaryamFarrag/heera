@@ -10,6 +10,9 @@ nav.my-nav{
     }
 }
 #choose{
+    h3{
+        color:rgb(233, 49, 49);
+    }
     .container{
         min-height: 40vh;
         padding-top:80px;
@@ -32,6 +35,9 @@ nav.my-nav{
     color:$font-color2;
     min-height: 70vh;
     padding-top:30px;
+    h3{
+        color:rgb(233, 49, 49);
+    }
     form{
         width:60%;
         margin:40px auto;
